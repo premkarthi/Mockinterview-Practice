@@ -1,0 +1,143 @@
+.mentors{
+    background-color: var(--bg-color);
+    padding: 50px 0px;
+}
+.mentors h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mentors p{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.cardsList{
+    display: flex;
+    align-items: center;
+    width: 100% ;
+    margin: 40px 0px 10px;
+}
+.card{
+    background-color: var(--white-color);
+    padding: 15px;
+    width: 280px;
+    margin: 0px 10px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+.cardImage{
+    position: relative;
+}
+
+.exp{
+    font-size: 12px;
+    color: var(--text-color);
+    background: var(--secondary-color);
+    border-radius: 4px;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.cardContent h3{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 42px;
+    margin: 10px 0px;
+}
+.cardContent h4{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 35px;
+    margin-bottom: 10px;
+    color: #666666;
+}
+.card img{ 
+    vertical-align: middle;
+}
+
+.cardContent .duration, .cardContent .language{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 10px;
+    color: #455A64;
+}
+
+.cardContent button{
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.mentorsActions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 30px 0px;
+}
+
+
+
+.left, .right{
+    position: relative;
+    border: 1px solid var(--text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: var(--white-color);
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+
+.right{
+    transform: rotate(180deg);
+}
+.left::after{
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+}
+
+.right::after{
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+}
+
+.viewAll{
+    border-color: var(--text-color);
+    background: var(--white-color);
+    color: var(--text-color);
+    margin-right: 0;
+    font-size: 16px ;
+    font-weight: 700;
+    padding: 0px 20px;
+    margin-left: 10px;
+}
