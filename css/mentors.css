@@ -25,6 +25,7 @@
     align-items: center;
     width: 100% ;
     margin: 40px 0px 10px;
+    position: relative;
 }
 .card{
     background-color: var(--white-color);
@@ -140,4 +141,42 @@
     font-weight: 700;
     padding: 0px 20px;
     margin-left: 10px;
+}
+
+
+.extra{
+    background-color :red !important;
+    font-size :20px;
+    width :400px;
+    height :100px;
+}
+.mobileModal{
+    display: flex;
+    align-items: center;
+}
+
+.hamburger{
+    font-size: 20px;
+    border: none;
+    background: none;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and  (max-width: 1200px){
+    header .container{
+        justify-content: space-between;
+    }
+    .mobileModal{
+        position: fixed;
+        background: red;
+        padding: 20px;
+        top: 66px;
+        width: 100%;
+        left: 0;
+        display: none;
+    } 
+    .hamburger{
+        display: block;
+    }
 }

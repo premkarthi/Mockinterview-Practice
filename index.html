@@ -7,28 +7,32 @@
     <title>Mockinterview</title>
     <link rel="stylesheet" href="css/style.css">
     
+  
+
 </head>
 <body>
-   
-
     <header>
         <div class="container">
             <div class="logo">
                 <img src="./images/logo.png" alt="Mockinterview-logo">
             </div>
 
-            <div class="links">
-                <ul >
-                    <li>Discover </li>
-                    <li>Mentors</li>
-                    <li>Learn More</li>
-                </ul>
-            </div>
+           <div class="mobileModal">
+                <div class="links">
+                    <ul >
+                        <li>Discover </li>
+                        <li>Mentors</li>
+                        <li>Learn More</li>
+                    </ul>
+                </div>
 
-            <div class="actions">
-                <button class="btn loginBtn">Login</button>
-                <button class="btn singupBtn">Signup</button>
-            </div>
+                <div class="actions">
+                    <button class="btn loginBtn" id="login">Login</button>
+                    <button class="btn singupBtn">Signup</button>
+                </div>
+           </div>
+
+           <button class="hamburger">⬅️</button>
         </div>
     </header>
 
@@ -38,7 +42,7 @@
                 <h1>Monetize your passion with us Today.</h1>
                 <p>Give your followers the easiest way to connect with you. Host 1:1 and group sessions, answer text queries, sell digital products and more</p>
                 <div class="bannerActions">
-                    <button class="btn ">Start Interview Now</button>
+                    <button class="btn start">Start Interview Now</button>
                     <button class="btn">Watch now</button>
                 </div>
             </div>
@@ -67,7 +71,7 @@
                         <div class="language">
                             <img src="./images/lang.png" alt="language">  Hindi, Tamil
                         </div>
-                        <button class="btn">Book now</button>
+                        <button class="btn booknow">Book now</button>
                     </div>
                 
 
@@ -85,7 +89,7 @@
                         <div class="language">
                             <img src="./images/lang.png" alt="language">  Hindi, Tamil
                         </div>
-                        <button class="btn">Book now</button>
+                        <button class="btn booknow">Book now</button>
                     </div>
                 </div>
 
@@ -101,7 +105,7 @@
                         <div class="language">
                             <img src="./images/lang.png" alt="language">  Hindi, Tamil
                         </div>
-                        <button class="btn">Book now</button>
+                        <button class="btn booknow">Book now</button>
                     </div>
                 </div>
 
@@ -117,7 +121,7 @@
                         <div class="language">
                             <img src="./images/lang.png" alt="language">  Hindi, Tamil
                         </div>
-                        <button class="btn">Book now</button>
+                        <button class="btn booknow">Book now</button>
                     </div>
                 </div>
             </div>
@@ -127,11 +131,13 @@
                     <button class="left"></button>
                     <button class="right"></button>
                 </div>
-                <button class="btn viewAll">View all mentors</button>
+            
             </div>
         
         </div>
     </section>
 
+   
+    <script src="./dom.js"></script>
 </body>
 </html>
