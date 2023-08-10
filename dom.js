@@ -280,7 +280,7 @@
 
 
 
-let students = ["Prem", "Karthi", "Sakthi", "Sharanya"]
+// let students = ["Prem", "Karthi", "Sakthi", "Sharanya"]
 
 
 // console.log(students[0]);
@@ -303,25 +303,25 @@ let students = ["Prem", "Karthi", "Sakthi", "Sharanya"]
 // console.log("End");
 
 
-// Step  1 : Hide the menu in the smaller device & create the popup for menu in the smaller device
-// Step  2 : Show the hamburger icon in the smaller device
-// Step  3 : On click of hamburger we should enable the popop
-// step  4 : On re click we should disable the popup
+// step1 : on click of hamburger mobileMobile pass the style 
+// step2 : on second click we should remove/override the style from mobilemodal
 
 
 
-let hamburger = document.querySelector('.hamburger')
-let mobileModal = document.querySelector('.mobileModal')
+// const hamburger = document.querySelector('.hamburger')
+// const mobileModal = document.querySelector('.mobileModal')
 
 
-let isActive = false
-hamburger.addEventListener('click', function(){
-    if(isActive){
-        mobileModal.style.display = 'none'
-        isActive = false
-    }
-    else{
-        mobileModal.style.display = 'flex'
-        isActive = true
-    }
-})
+// let isClicked = false
+
+// hamburger.addEventListener('click', function(){
+//     if(isClicked == false){
+//         mobileModal.style.display = 'flex'
+//         isClicked = true
+//     }
+//     else{
+//         mobileModal.style.display = 'none'
+//         isClicked = false
+//     }
+// })
+
