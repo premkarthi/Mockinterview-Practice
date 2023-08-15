@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<style>
+    input{
+        width: 300px;
+        height: 40px;
+        padding-left: 10px;
+        display: block;
+        margin: 20px 0px;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    button{
+        width: 300px;
+        height: 40px;
+        border: none;
+        background: rgb(0, 116, 217);
+        color: white;
+    }
+    .forms{
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 50px 0px;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .container{
+        width: 330px;
+    }
+    #list{
+        list-style: none;
+        padding: 0;
+    }
+    .item{
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px 0px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .title{
+        font-size: 16px;
+        font-weight: 600;
+
+    }
+    .date{
+
+    }
+  
+</style>
+<body>
+
+    <div class="forms">
+        <input type="text" name="" id="task" placeholder="Enter Task">
+        <input type="date" name="" id="date">
+        <button id="submit">Submit</button>
+    </div>
+    
+
+    <div class="container">
+        <h2>List out your task</h2>
+        <ul id="list">
+           
+        </ul>
+
+        <button id="remove">Remove all task</button>
+    </div>
+    
+
+    <script src="./localstorage.js" ></script>
+</body>
+</html>

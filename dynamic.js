@@ -55,7 +55,6 @@ const fromSubmit = document.querySelector('.formSubmit')
 firstName.addEventListener('keyup', function(){
     let parent = firstName.parentElement
     let label = parent.querySelector('label')
-
     if(firstName.value.length <= 3){
         label.style.display = 'block'
     }
@@ -77,6 +76,7 @@ fromSubmit.addEventListener('click', function(){
     if(firstName.value.length == 0 || address.value.length == 0){
         return
     }
+    
     //This code wont works- if conditions are true
     newObj.name = firstName.value
     newObj.address = address.value
@@ -85,7 +85,6 @@ fromSubmit.addEventListener('click', function(){
     ul.innerHTML = ''
     renderDOM()
 })
-
 
 
 
