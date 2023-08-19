@@ -21,62 +21,61 @@
 // Use Object.keys to get all keys.
 
 
-let taskName = document.querySelector("#task")
-let taskDate = document.querySelector("#date")
-let submit = document.querySelector("#submit")
-let list = document.querySelector('#list')
+// let taskName = document.querySelector("#task")
+// let taskDate = document.querySelector("#date")
+// let submit = document.querySelector("#submit")
+// let list = document.querySelector('#list')
 
-let completeData = JSON.parse(localStorage.getItem("task")) || []
+// let completeData = JSON.parse(localStorage.getItem("task")) || []
 
-submit.addEventListener('click', function(){
-    let obj = {
-        taskName : taskName.value,
-        taskDate : taskDate.value
-    }
-    taskName.value = ''
-    taskDate.value = ''
+// submit.addEventListener('click', function(){
+//     let obj = {
+//         taskName : taskName.value,
+//         taskDate : taskDate.value
+//     }
+//     taskName.value = ''
+//     taskDate.value = ''
 
-    completeData.push(obj)
-    localStorage.setItem("task", JSON.stringify(completeData))
-    UpdateUI()
-})
-
-
+//     completeData.push(obj)
+//     localStorage.setItem("task", JSON.stringify(completeData))
+//     UpdateUI()
+// })
 
 
 
+// function UpdateUI(){
+//     let getDataFromLocal = JSON.parse(localStorage.getItem("task")) || []
+//     list.innerHTML = ''
+//     getDataFromLocal.forEach(element => {
 
-function UpdateUI(){
-    let getDataFromLocal = JSON.parse(localStorage.getItem("task")) || []
-    list.innerHTML = ''
-    getDataFromLocal.forEach(element => {
+//         let li = document.createElement('li')
+//         let span1 = document.createElement('span')
+//         let span2 = document.createElement('span')
 
-        let li = document.createElement('li')
-        let span1 = document.createElement('span')
-        let span2 = document.createElement('span')
-
-        li.classList.add('item')
-        span1.classList.add('title')
-        span2.classList.add('date')
+//         li.classList.add('item')
+//         span1.classList.add('title')
+//         span2.classList.add('date')
     
-        span1.innerText = element.taskName
-        span2.innerText = element.taskDate
+//         span1.innerText = element.taskName
+//         span2.innerText = element.taskDate
 
-        li.appendChild(span1)
-        li.appendChild(span2)
+//         li.appendChild(span1)
+//         li.appendChild(span2)
 
-        list.appendChild(li)
+//         list.appendChild(li)
     
-    });
-}
+//     });
+// }
 
-UpdateUI()
+// UpdateUI()
 
 
 
-let remove = document.querySelector('#remove')
+// let remove = document.querySelector('#remove')
 
 remove.addEventListener('click', function(){
-    localStorage.clear()
-    UpdateUI()
+    // localStorage.clear()
+    // UpdateUI()
+    adddata()
 })
+
