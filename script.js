@@ -328,3 +328,140 @@
 // h()
 
 
+// Shallow copy 
+// Deep copy
+
+// Spread Operators  ...
+// Rest Operators ...
+
+
+// this 
+// inheritence 
+// prototype
+// call apply bind
+
+
+
+// Spread Operators
+// let arr = [1,2,3,4,5]
+
+// let newArr = [...arr]
+
+// newArr[1] = 100
+
+// console.log("OLD",  arr);
+
+// console.log("New", newArr);
+
+//Spread operators will work as a deep copy only for first level values in obj and array
+// it wont work for nested obj and array 
+
+// let obj = {
+//     firstname : 'Prem',
+//     location : "Bangalore",
+//     phone : 2390423042,
+//     pincode: 32234243,
+// }
+
+
+// let newObj = {...obj}
+
+// newObj.firstname = "Karthi"
+
+// console.log(obj);
+// console.log(newObj);
+
+//Rest operators
+// function listItems(param1, parem2 , ...parem3){
+//     console.log(`hey here is the list ${param1}, ${parem3}`);
+// }
+
+// listItems("Prem", "Karthi", "Somthing", "sjadfajsd", "sdfnsadkjfbsd")
+
+
+//This key is Brower or Window Object
+// console.log(this);
+
+// let user1 = {
+//     firstname : 'Prem',
+//     location : "Bangalore",
+//     phone : 2390423042,
+//     pincode: 32234243,
+//     showDetails : function(age, something){
+//         if(this.firstname != undefined && this.location != undefined) {
+//             console.log(`Hey i am ${this.firstname}, ${age} old. from ${this.location} - ${something}`);
+//         }
+//         else{
+//             console.log("Data is Invalid");
+//         }
+//     },
+//     getDetails : function(){
+//         if(this.firstname != undefined && this.location != undefined) {
+//             console.log(`Hey i am ${this.firstname} from ${this.location}`);
+//         }
+//         else{
+//             console.log("Data is Invalid");
+//         }
+//     }
+// }
+
+// let user2 = {
+//     firstname : 'Karthi',
+//     location : "Krishnagiri",
+//     phone : 2390423042,
+//     pincode: 32234243,
+// }
+
+
+// Inherience
+
+// user1.showDetails()
+
+// user1.showDetails(25)
+// user1.showDetails.call(user2, 25, "Something new")
+// user1.showDetails.apply(user2, [25, "Something new"])
+
+// let laterUse = user1.showDetails.bind(user2)
+
+// laterUse(25, "aeonwkdlsnadfkj")
+
+// Call Apply Bind - we can borrow a method from another object
+ 
+
+
+
+
+// Object.prototype.showDetails = function(){
+//     if(this.firstname != undefined && this.location != undefined) {
+//         console.log(`Hey i am ${this.firstname} from ${this.location}`);
+//     }
+//     else{
+//         console.log("Data is Invalid");
+//     }
+// }
+
+
+
+"use strict"
+
+let obj=  {
+    firstname : "Prem",
+    lastname : "karthi",
+    //normal fn
+    getDetails : function(){
+        //arrow fn
+        let innerFn = () => {
+            console.log(`hello ${this.firstname} - ${this.lastname}`);
+        }
+        innerFn()
+    }
+
+}
+
+
+// Use stict this keyword issue 
+
+console.log(this);
+
+
+obj.getDetails()

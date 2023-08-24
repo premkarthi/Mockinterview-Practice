@@ -54,7 +54,6 @@ function renderUI(weatherReport){
     temp.innerHTML = weatherReport.main.temp
     country.innerHTML = weatherReport.sys.country
 
-    
     console.log(weatherReport);
 }
 
