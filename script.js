@@ -442,26 +442,381 @@
 
 
 
-"use strict"
+// "use strict"
 
-let obj=  {
-    firstname : "Prem",
-    lastname : "karthi",
-    //normal fn
-    getDetails : function(){
-        //arrow fn
-        let innerFn = () => {
-            console.log(`hello ${this.firstname} - ${this.lastname}`);
-        }
-        innerFn()
-    }
+// let obj=  {
+//     firstname : "Prem",
+//     lastname : "karthi",
+//     //normal fn
+//     getDetails : function(){
+//         //arrow fn
+//         let innerFn = () => {
+//             console.log(`hello ${this.firstname} - ${this.lastname}`);
+//         }
+//         innerFn()
+//     }
 
-}
+// }
 
 
 // Use stict this keyword issue 
 
-console.log(this);
+// console.log(this);
 
 
-obj.getDetails()
+// obj.getDetails()
+
+
+// Closures Examples
+
+
+// function fn() {
+//     console.log("print", a);
+// }
+
+// function main() {
+//     var a = 10
+//     fn()
+// }
+
+// main()
+
+
+
+// function main() {
+//     let arr = []
+//     for (let i = 0; i < 3; i++) {
+//         arr.push(function fn() {
+//             console.log(i);
+//         })
+//     }
+//     return arr
+// }
+
+// var copyArr = main()
+
+// copyArr[0]()
+// copyArr[1]()
+// copyArr[2]()
+
+
+// for (let i = 0; i < 5; i++) {
+//     setTimeout(()=>{
+//         console.log(i);
+//     },1000)
+// }
+
+
+
+// let obj = {
+//     name: "Prem",
+//     phone: 9909090909,
+//     address: {
+//         line1: '102 Street',
+//         line2: 'Krishnagiri',
+//         pincode: {
+//             local : 234234,
+//             main : 324234 
+//         }
+//     }
+// }
+
+
+// function flatterObj(obj, parent){
+//     let newObj = {}
+//     for (const key in obj) {
+//         let newKey =  parent == '' ? key: parent + '.' + key
+        
+//         let isObj = typeof obj[key] == 'object' ? true : false
+//         if (isObj){
+//             let nestedObj =  flatterObj(obj[key],  newKey)
+//             newObj= {...newObj, ...nestedObj}
+//         }
+//         else{
+//             newObj[newKey] = obj[key]
+//         }
+//     }
+
+//     return newObj
+// }
+
+// console.log(flatterObj(obj, ''));
+
+// let obj3 = {}
+
+// let arr = []
+// let str = 'Hello'
+// let bool = true
+
+
+
+// let use1  ={
+//     location :  'chennai',
+//     name: 'Karthi'
+// } 
+// let obj2 = Object.create(obj)
+// Object.assign(obj2, use1)
+
+// console.log(obj2);
+// console.log(obj);
+
+
+// for (const key in obj2) {
+//     if (obj2.hasOwnProperty(key)) {
+//         console.log(key);   
+//     }
+// }
+
+
+// console.log("Before");
+// let worker = new Worker('./worker.js')
+
+// console.log("After Click");
+// worker.postMessage('Hello worker')
+// console.log("After Click 2");
+
+
+
+// worker.onmessage = (e) => {
+//     console.log("Message received from worker" , e);
+//     worker.terminate()
+//     console.log(worker);
+// };
+
+// console.log("End");
+
+
+
+//Callback HELL - 
+// 1. Nested Callbacks 
+// 2. inversion of Control - trust issues
+
+// import { GetRemaingAmount, GetRemaingAmountPromise } from './worker.js'
+
+// let amount = 100
+// let invest = 20
+
+
+// console.log("Before");
+// function cb(data='') {
+//     amount = amount - invest
+//     console.log("From Callback" , amount, data);
+// }
+
+
+
+// GetRemaingAmount(cb)
+
+// let promise = GetRemaingAmountPromise()
+// console.log("After");
+// promise.then(cb).catch((err)=>console.log(err))
+
+
+
+
+
+
+
+// let p1 = Promise.resolve(1)
+// let p2 = Promise.resolve(1)
+// let p3 = Promise.resolve(1)
+// let p5 = Promise.resolve(5)
+
+
+// const proimiseAll = async () =>{
+//     console.log("A");
+//     let group1 = await Promise.all([p1, p2])
+//     console.log("B");
+//     let group2 = await Promise.all([p3, p4])
+//     console.log("C");
+//     return [group1, group2]
+// }
+
+
+// proimiseAll().then(console.log).catch(console.log)
+
+// Promise.Myall = (promiseArr) =>{
+//     return new Promise((resolve, reject)=>{
+//         let lenthOfArr = promiseArr.length
+//         let resultRedArr = []
+//         if(lenthOfArr === 0){
+//             return resolve(resultRedArr)
+//         }
+
+//         promiseArr.forEach(async(promise)=>{
+//             try {
+//                 let value = await promise
+//                 resultRedArr.push(value)
+//                 lenthOfArr--
+//                 if (lenthOfArr === 0){
+//                     resolve(resultRedArr)
+//                 }
+//             } catch (error) {
+//                 reject(error)
+//             }
+//         })
+
+//     })
+// }
+
+
+// let promise = Promise.Myall([p1, p2, p3, p4, p5])
+
+// promise.then(console.log).catch(console.log)
+
+
+
+// let p1 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve("Hello")
+//     }, 500)
+// })
+
+
+// let p2 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve("Hello 2")
+//     }, 1000)
+// })
+
+
+// let p3 = new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         resolve("Hello 3")
+//     }, 2200)
+// })
+
+// Promise.Myrace = (promisesArr) =>{
+//     return new Promise((resolve, reject)=>{
+//         promisesArr.forEach(promise => {
+//             promise.then(resolve, reject)
+//         });
+//     })
+// }
+
+
+// let promise = Promise.Myrace([p1,p2,p3])
+
+
+// promise.then(console.log).catch(console.log)
+
+
+
+
+
+//CustomPromise  
+
+function excuterFunc(resolve, reject){
+    setTimeout(()=>{
+        resolve("Prem")
+    }, 1000)
+}
+
+function CustomPriomse(excuterFunc){
+    let state = 'Pending'
+    let value = undefined
+    let successCBFns = []
+    let failerCBFns = []
+
+    this.then = (cb) =>{
+        if(state == 'Resolved'){
+            cb(value)
+        }else{  
+            successCBFns.push(cb)
+        }
+    }
+    this.catch = (cb) =>{
+        if (state == 'Rejected'){
+            cb(value)
+        }
+        else{  
+            failerCBFns.push(cb)
+        }
+
+    }
+    const reject = (val) => {
+        if(state != 'Pending') return
+        state = 'Rejected'
+        value = val
+        failerCBFns.forEach((cbs)=>{
+            cbs(value)
+        })
+    }
+
+    const resolve = (val) =>{
+        if(state != 'Pending') return
+        state = 'Resolved'
+        value = val
+        successCBFns.forEach((cbs)=>{
+            cbs(value)
+        })
+    }
+
+    excuterFunc(resolve, reject)
+
+}
+
+
+let promise = new CustomPriomse(excuterFunc)
+
+
+
+// promise.then((data)=>{
+//     console.log("Hello", data);
+// })
+
+// promise.then((data)=>{
+//     console.log("THEN", data)
+// })
+
+// promise.catch((data)=>{
+//     console.log("Catch1", data)
+// })
+
+// promise.catch((data)=>{
+//     console.log("Catch2", data)
+// })
+
+const personMap = new Map();
+
+// adding/update a key in map
+personMap.set('name', "Jasbir");
+personMap.set("age", 35);
+personMap.set('occupation', 'Super Hero');
+personMap.delete("age");
+personMap.get("occupation");
+
+
+// console.log(personMap);
+
+// let strMap = JSON.stringify(personMap);
+// console.log("strMap: " , strMap);
+
+// let cap = {
+//     name: "Steve",
+//     occupation: "Super Hero",
+//     age: 35
+// }
+
+// let strObj=JSON.stringify(cap);
+// console.log("strObj: " , strObj);
+
+
+// let john = { name: "John" };
+
+// let map = new WeakMap();
+// map.set(john, "hi");
+// john = null;
+// console.log("in map",map);
+// console.log("48",map.get(john));
+
+function randomFunc(){
+    for(let i = 0; i < 3; i++){
+        function name(){
+            setTimeout(()=>console.log(i),1000);
+        };
+        name()
+    }
+  }
+  randomFunc();
+  
